@@ -2387,7 +2387,7 @@
 			"effect": "The Mystic masters the stare of the Evil Eye and can curse enemies on the battlefield; a power often used by the disciples of the Dark Lords during the Great War.",
 			"novice": {
 				"type": "Free",
-				"text": ". Once per turn, the Mystic’s dark glare automatically gives an enemy a second chance to fail any success tests against the Mystic (roll twice, the action fails if one of the tests is a failure). This effect is ongoing until the Mystic fails a Resolute test."
+				"text": "Once per turn, the Mystic’s dark glare automatically gives an enemy a second chance to fail any success tests against the Mystic (roll twice, the action fails if one of the tests is a failure). This effect is ongoing until the Mystic fails a Resolute test."
 			},
 			"adept": {
 				"type": "Free",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Ability } from '../components/abilities';
+import { Ability } from '../components/ability';
 
 export default {
   title: 'Ability',

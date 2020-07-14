@@ -13,8 +13,8 @@ const Label = styled.div`
 `
 
 const H1 = styled.h1`
-  /* @import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap');
-	font-family: 'IM Fell Great Primer SC'; */
+  /* @import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap'); */
+	font-family: 'IM Fell Great Primer SC';
 	padding: 0;
 	font-size: 24px;
   color: #666;

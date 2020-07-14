@@ -33,7 +33,7 @@ const Value = styled.span`
 
 const Mod = styled.span``;
 
-const StatBlock = ({stat, value, mod}) => (
+export const StatBlock = ({stat, value, mod}) => (
 	<Block>
 		<Stat>{stat}</Stat>
 		<ValueBlock>
@@ -60,6 +60,8 @@ export const Stats = ({data}) => {
 
 			statList.push({"stat": statName, "value": statValue, "mod": statMod});
 		})
+
+		console.log(statList)
 
 		return setStats(statList)
 	}, [])

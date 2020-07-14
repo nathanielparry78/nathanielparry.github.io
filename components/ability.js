@@ -33,6 +33,10 @@ const Requirement = styled.div`
 const TierBlock = styled.li`
 	list-style: none;
 	padding-left: 2rem;
+	border-bottom: 1px solid #ccc;
+	border-width: 90%;
+	padding-top: .5rem;
+	padding-bottom: .75rem;
 
 	&::before {
 		margin: 0 .5rem 0 -1.5rem;
@@ -50,6 +54,7 @@ const Type = styled.span`
 const Text = styled.span``;
 
 export const Ability = ({
+	className,
 	name,
 	source,
 	requirement,
@@ -57,8 +62,8 @@ export const Ability = ({
 	novice,
 	adept,
 	master,
-	tier}) => (
-	<div>
+	tier=3}) => (
+	<div className={className}>
 		<GlobalStyles/>
 		<Name>{name}</Name>
 		<Source>{source}</Source>

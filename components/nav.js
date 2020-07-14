@@ -1,5 +1,20 @@
-import React from 'react'
+ 0;import React from 'react'
 import Link from 'next/link'
+import styled from 'styled-components'
+
+const StyledNav = styled.nav`
+  position: sticky;
+  top: 0;
+  background: #222;
+  z-index: 25;
+`
+
+const StyledUl = styled.ul`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+`
 
 const links = [
   { href: '/abilities', label: 'ABILITIES' },
@@ -12,14 +27,14 @@ const links = [
 }))
 
 const Nav = () => (
-  <nav>
-    <ul>
+  <StyledNav>
+    <StyledUl>
       {links.map(({ key, href, label }) => (
         <li key={key}>
           <a href={href}>{label}</a>
         </li>
       ))}
-    </ul>
+    </StyledUl>
 
     <style jsx>{`
       :global(body) {
@@ -47,7 +62,7 @@ const Nav = () => (
         font-size: 13px;
       }
     `}</style>
-  </nav>
+  </StyledNav>
 )
 
-export default Nav
+export default Nav;
