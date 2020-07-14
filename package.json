@@ -18,6 +18,10 @@
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
+<<<<<<< HEAD
+=======
+    "node": "12.x", 
+>>>>>>> 795a8f09f3bcf1b23ac17b116fad8bdfe7b70018
     "@babel/core": "^7.9.0",
     "@storybook/addon-actions": "^5.3.18",
     "@storybook/addon-links": "^5.3.18",
@@ -29,6 +33,10 @@
     "storybook-dark-mode": "^0.4.0"
   },
   "engines": {
+<<<<<<< HEAD
     "node": "12.x.x"
+=======
+    "node": "12.x"
+>>>>>>> 795a8f09f3bcf1b23ac17b116fad8bdfe7b70018
   }
 }
