@@ -1,33 +1,63 @@
-import React from 'react'
+import useSWR from 'swr'
+import Link from 'next/link'
+import { useUser } from '../utils/auth/useUser'
 
+const fetcher = (url, token) =>
+  fetch(url, {
+    method: 'GET',
+    headers: new Headers({ 'Content-Type': 'application/json', token }),
+    credentials: 'same-origin',
+  }).then((res) => res.json())
 
-const Home = () => (
-  <>
-    <div className="hero">
-      <h1 className="title">SYM REF</h1>
-      <p className="description">
-        Click a thing.
-      </p>
+const Index = () => {
+  const { user, logout } = useUser()
+  const { data, error } = useSWR(
+    user ? ['/api/getFood', user.token] : null,
+    fetcher
+  )
+  if (!user) {
+    return (
+      <>
+        <p>Hi there!</p>
+        <p>
+          You are not signed in.{' '}
+          <Link href={'/auth'}>
+            <a>Sign in</a>
+          </Link>
+        </p>
+      </>
+    )
+  }
 
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
+  return (
+    <div>
+      <div>
+        <p>You're signed in. Email: {user.email}</p>
+        <p
+          style={{
+            display: 'inline-block',
+            color: 'blue',
+            textDecoration: 'underline',
+            cursor: 'pointer',
+          }}
+          onClick={() => logout()}
         >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
+          Log out
+        </p>
       </div>
+      <div>
+        <Link href={'/example'}>
+          <a>Another example page</a>
+        </Link>
+      </div>
+      {error && <div>Failed to fetch food!</div>}
+      {data ? (
+        <div>Your favorite food is {data.food}.</div>
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
-  </>
-)
+  )
+}
 
-export default Home
+export default Index;

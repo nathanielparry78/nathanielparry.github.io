@@ -54,7 +54,7 @@ const GarbageCan = styled.span`
   cursor: pointer;
 `
 
-const Abilities = () => {
+const Abilities = ({className}) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [collection, setCollection] = useState([]);
@@ -92,7 +92,7 @@ const Abilities = () => {
 
   return (
     <div>
-      <StyledForm>
+      <StyledForm className={className}>
         <StyledInput onChange={handleInputChange} ref={inputRef}/>
         {results.length > 0 &&
           <SuggestList>
@@ -105,7 +105,6 @@ const Abilities = () => {
 
       {collection.length > 0 && collection.map(ability => {
         let tier = ""
-        console.log(ability.type)
         switch(ability.type) {
           case "Ability":
           case "Monstrous Trait":
@@ -116,7 +115,6 @@ const Abilities = () => {
             tier = 1
         }
 
-        console.log(tier)
         return (
           <AbilityBlock key={ability.id}>
             <Ability tier={tier} {...ability} />

@@ -35,26 +35,6 @@ function App({ Component, pageProps }) {
         <Nav />
         <Component {...pageProps} />
       </GlobalStyles>
-              {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
-        <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-{/*
-        <!-- TODO: Add SDKs for Firebase products that you want to use
-            https://firebase.google.com/docs/web/setup#available-libraries --> */}
-
-        <script>
-          // Your web app's Firebase configuration
-          var firebaseConfig = {
-            apiKey: "AIzaSyClOxNUeMGRedsu8arzoq3JOZ-DSFdrQvg",
-            authDomain: "sym-ref.firebaseapp.com",
-            databaseURL: "https://sym-ref.firebaseio.com",
-            projectId: "sym-ref",
-            storageBucket: "sym-ref.appspot.com",
-            messagingSenderId: "123701362737",
-            appId: "1:123701362737:web:f29964a74ba4fe111e5510"
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig);
-        </script>
     </>
 
   )
